@@ -73,8 +73,8 @@ submit[0].addEventListener("click", function () {
   }
 if (val2!=undefined) {
   let at, dot;
-  at = val2.indexOf("@");
-  dot = val2.indexOf(".");
+  at = val2.indexOf("@gmail");
+  dot = val2.indexOf(".com");
   if ((at > 0 && dot > 4) ) {
     tf2 = true;
   } 
@@ -130,7 +130,10 @@ submit[1].addEventListener("click", function () {
 submit[2].onclick = function () {
   changePage(container3, container4);
   active(nbNav[3], nbNav[2]);
-};
+};submit[3].onclick=function(){
+  
+  changePage(container4, container5);
+}
 back[0].addEventListener("click", function () {
   changePage(container2, container1);
   active(nbNav[0], nbNav[1]);
