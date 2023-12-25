@@ -73,9 +73,9 @@ submit[0].addEventListener("click", function () {
   }
 if (val2!=undefined) {
   let at, dot;
-  at = val2.indexOf("@gmail");
-  dot = val2.indexOf(".com");
-  if ((at > 0 && dot > 4) ) {
+  at = val2.indexOf("@gmail.com");
+
+  if ((at > 0 ) ) {
     tf2 = true;
   } 
   if (tf2) {
