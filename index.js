@@ -42,7 +42,7 @@ input_phone.oninput = function () {
 submit[0].addEventListener("click", function () {
   if (val1 != undefined) {
     for (let i = 0; i < val1.length; i++) {
-      if (val1[i] < "9" && val1[i] > "0") {
+      if (val1[i] <= "9" && val1[i] >= "0") {
         tf1 = false;
         break;
       } else {
@@ -79,9 +79,6 @@ submit[0].addEventListener("click", function () {
     console.log(space);
     if (at > 0 && space == -1) {
       tf2 = true;
-    }
-    if (tf2) {
-      console.log(tf2);
     } else {
       error1[1].innerHTML = "Invalid Email";
       input_email.style.borderColor = "red";
@@ -97,10 +94,20 @@ submit[0].addEventListener("click", function () {
     tf2 = false;
   }
   if (val3 >= "0" && val3 <= "9") {
-    tf3 = true;
-    console.log(tf3);
+    if (val3.length < 15) {
+      tf3 = true;
+      console.log(tf3);
+    } else {
+      console.log(val3);
+      error1[2].innerHTML = "the number is long";
+      input_phone.style.borderColor = "red";
+      error1[2].style.display = "flex";
+      error1[2].style.color = "red";
+      tf3 = false;
+    }
   } else {
     console.log(val3);
+    error1[2].innerHTML = "Invalid phone number";
     input_phone.style.borderColor = "red";
     error1[2].style.display = "flex";
     error1[2].style.color = "red";
